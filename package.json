@@ -1,0 +1,7 @@
+{
+  "name": "ASMA_api",
+  "version": "v1",
+  "main": "server.js",
+  "author": "Andrei Cruz",
+  "license": "MIT"
+}
