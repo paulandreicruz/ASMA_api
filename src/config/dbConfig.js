@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-function dbConnection() {
+async function dbConnection() {
   try {
-    mongoose.connect(process.env.DB_URI, {
+    await mongoose.connect(process.env.DB_URI, {
       dbName: process.env.DB_NAME,
     });
     console.log('DATABASE CONNECTED');
