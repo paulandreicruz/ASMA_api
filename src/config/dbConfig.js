@@ -1,13 +1,14 @@
 import mongoose from 'mongoose';
+import log from '../utils/logger.js';
 
-async function dbConnection() {
+function dbConnection() {
   try {
-    await mongoose.connect(process.env.DB_URI, {
+    mongoose.connect(process.env.DB_URI, {
       dbName: process.env.DB_NAME,
     });
-    console.log('DATABASE CONNECTED');
+    log.info('DATABASE CONNECTED');
   } catch (err) {
-    console.log('DATABASE ERROR => ', err);
+    log.error('DATABASE ERROR => ', err);
   }
 }
 

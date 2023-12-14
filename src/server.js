@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 import { corsOptions } from './config/corsConfig.js';
+import log from './utils/logger.js';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.listen(process.env.PORT, () => {
-  console.log('SERVER IS RUNNING', process.env.PORT);
+  // log.info(`Server is running on port ${process.env.PORT}`);
+  log.info(`Worker id: ${process.pid}`);
   dbConnection();
 });
